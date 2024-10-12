@@ -1,12 +1,10 @@
 import { createYoga } from 'graphql-yoga';
 import { createServer } from 'http';
 import { makeExecutableSchema } from '@graphql-tools/schema';
+import { readFileSync } from 'fs'; // Importa el módulo fs
 
-const typeDefs = `
-    type Query {
-        hello: String!
-    }
-`;
+// Lee el contenido del archivo schema.graphql
+const typeDefs = readFileSync('./src/schema.graphql', 'utf-8');
 
 const resolvers = {
     Query: {
