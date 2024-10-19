@@ -1,3 +1,10 @@
 type Query {
     hello: String!
+    quantity: Int!
+    getUser: User!
+}
+
+type User {
+    name: String!
+    lastName: String!
 }
