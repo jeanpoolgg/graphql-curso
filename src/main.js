@@ -4,6 +4,7 @@ import { makeExecutableSchema } from '@graphql-tools/schema';
 import { readFileSync } from 'fs'; // Importa el módulo fs
 import Query from './resolvers/Query';
 import Author from './resolvers/Author';
+import Book from './resolvers/Book';
 import db from './db';
 
 // Lee el contenido del archivo schema.graphql
@@ -11,7 +12,8 @@ const typeDefs = readFileSync('./src/schema.graphql', 'utf-8');
 
 const resolvers = {
     Query,
-    Author
+    Author,
+    Book
 };
 
 // Crear un esquema ejecutable
