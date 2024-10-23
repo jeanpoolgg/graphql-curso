@@ -7,10 +7,27 @@ type Query {
     book(id: ID): [Book!]!
 }
 
+type Mutation {
+    createUser(
+        name: String!
+        lastName: String!
+        email: String!
+        password: String!
+    ): User!
+    updateUser(
+        id: ID!
+        name: String
+        lastName: String
+        email: String
+        password: String
+    ): User!
+}
+
 type User {
     id: ID!
     name: String!
     lastName: String!
+    email: String!
 }
 
 type Author {
